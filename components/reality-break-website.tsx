@@ -1,20 +1,24 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { InstagramIcon, TwitterIcon, MusicIcon, Facebook, Youtube, ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { InstagramIcon, TwitterIcon, MusicIcon, Facebook, Youtube, ChevronLeftIcon, ChevronRightIcon, ChevronDown } from "lucide-react"
+import { motion } from 'framer-motion'
 
 export default function RealityBreakWebsite() {
+  const membersRef = useRef<HTMLElement>(null)
   const bandMembers = [
     {
-      name: "Alex",
-      role: "Lead Vocals",
-      instrument: "Microphone",
-      bio: "With a voice that can shatter reality, Alex leads the band with raw emotion and unparalleled stage presence. Their lyrics dive deep into the human psyche, exploring the blurred lines between dreams and waking life.",
+      name: "Noa",
+      role: "Bass Slapper",
+      instrument: "Bass Guitar",
+      bio: "Stinkt a bissle, With a voice that can shatter reality, Alex leads the band with raw emotion and unparalleled stage presence. Their lyrics dive deep into the human psyche, exploring the blurred lines between dreams and waking life.",
       quote: "Music is the key that unlocks the doors of perception.",
-      socialMedia: { instagram: "@alex_realitybreak", twitter: "@alexsings_rb" }
+      socialMedia: { instagram: "@alex_realitybreak", twitter: "@alexsings_rb" },
+      src: "/noa.jpg"
     },
     {
       name: "Sam",
@@ -22,7 +26,8 @@ export default function RealityBreakWebsite() {
       instrument: "Electric Guitar",
       bio: "Sam's guitar riffs are like lightning strikes, electrifying the audience and bending the fabric of sound. Their innovative use of effects and unconventional techniques creates soundscapes that defy reality.",
       quote: "I don't play the guitar, I channel the universe through six strings.",
-      socialMedia: { instagram: "@sam_shreds", twitter: "@samguitar_rb" }
+      socialMedia: { instagram: "@sam_shreds", twitter: "@samguitar_rb" },
+      src: "/placeholder.png"
     },
     {
       name: "Jordan",
@@ -30,7 +35,8 @@ export default function RealityBreakWebsite() {
       instrument: "Bass Guitar",
       bio: "The backbone of Reality Break, Jordan's bass lines are the gravitational force that holds the band's sound together. Their grooves are so deep, they've been known to alter the Earth's rotation.",
       quote: "Feel the low end? That's the sound of reality shifting.",
-      socialMedia: { instagram: "@jordan_lowend", twitter: "@jordanbass_rb" }
+      socialMedia: { instagram: "@jordan_lowend", twitter: "@jordanbass_rb" },
+      src: "/placeholder.png"
     },
     {
       name: "Taylor",
@@ -38,7 +44,8 @@ export default function RealityBreakWebsite() {
       instrument: "Drum Set",
       bio: "Taylor's drumming is a force of nature, creating rhythms that transcend time and space. Their polyrhythmic prowess and explosive energy drive the band's most mind-bending performances.",
       quote: "I don't keep time, I bend it to my will.",
-      socialMedia: { instagram: "@taylor_beats", twitter: "@taylordrums_rb" }
+      socialMedia: { instagram: "@taylor_beats", twitter: "@taylordrums_rb" },
+      src: "/placeholder.png"
     },
     {
       name: "Casey",
@@ -46,7 +53,8 @@ export default function RealityBreakWebsite() {
       instrument: "Synthesizer",
       bio: "Casey is the band's sonic architect, crafting lush soundscapes and ethereal melodies that transport listeners to alternate dimensions. Their mastery of synthesis and sound design pushes the boundaries of what's possible in music.",
       quote: "Every key is a portal to another world.",
-      socialMedia: { instagram: "@casey_keys", twitter: "@caseysynth_rb" }
+      socialMedia: { instagram: "@casey_keys", twitter: "@caseysynth_rb" },
+      src: "/placeholder.png"
     },
   ]
 
@@ -54,51 +62,40 @@ export default function RealityBreakWebsite() {
     {
       date: "THU, FEB 13, 2025",
       venue: "ALEXANDRA PALACE",
-      location: "LONDON, UNITED KINGDOM"
+      location: "LONDON, UNITED KINGDOM",
+      venueURL: "#",
+      ticketsURL: "#"
     },
     {
       date: "SAT, FEB 15, 2025",
       venue: "COLUMBIAHALLE",
-      location: "BERLIN, GERMANY"
-    },
-    {
-      date: "SUN, FEB 16, 2025",
-      venue: "POPPODIUM 013",
-      location: "TILBURG, NETHERLANDS"
-    },
-    {
-      date: "TUE, FEB 18, 2025",
-      venue: "L'OLYMPIA",
-      location: "PARIS, FRANCE"
-    },
-    {
-      date: "WED, FEB 19, 2025",
-      venue: "PALLADIUM KÖLN",
-      location: "KÖLN, GERMANY"
-    },
-    {
-      date: "THU, FEB 20, 2025",
-      venue: "ZOOM FRANKFURT",
-      location: "FRANKFURT, GERMANY"
+      location: "BERLIN, GERMANY",
+      venueURL: "#",
+      ticketsURL: "#"
     },
     {
       date: "SAT, FEB 22, 2025",
       venue: "TONHALLE",
-      location: "MUNICH, GERMANY"
+      location: "MUNICH, GERMANY",
+      venueURL: "#",
+      ticketsURL: "#"
     },
     {
       date: "SUN, FEB 23, 2025",
       venue: "GROSSE FREIHEIT 36",
-      location: "HAMBURG, GERMANY"
+      location: "HAMBURG, GERMANY",
+      venueURL: "#",
+      ticketsURL: "#"
     }
   ]
 
   const carouselImages = [
-    "/placeholder.svg?height=600&width=800&text=Live+Performance+1",
-    "/placeholder.svg?height=600&width=800&text=Band+Photo+1",
-    "/placeholder.svg?height=600&width=800&text=Concert+Crowd+1",
-    "/placeholder.svg?height=600&width=800&text=Studio+Session+1",
-    "/placeholder.svg?height=600&width=800&text=Live+Performance+2",
+    "/carousel1.jpg",
+    "/carousel2.jpg",
+    "/carousel3.jpg",
+    "/carousel4.jpg",
+    "/carousel5.jpg",
+    "/carousel6.jpg",
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -119,36 +116,53 @@ export default function RealityBreakWebsite() {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + carouselImages.length) % carouselImages.length)
   }
 
+  const scrollToMembers = () => {
+    membersRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white">
-          <img
-            src="/placeholder.svg?height=1080&width=1920"
-            alt="Reality Break Band performing live on stage"
-            className="w-full h-full object-cover"
-          />
+      <section className="relative h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="bg-gradient-to-b from-transparent to-white px-6 sm:px-12">
+            <Image
+              src="/logo_black.png"
+              alt="Band Logo"
+              className="mx-auto"
+              width={1000}
+              height={1000}
+            />
+          </div>
+          <Button className="mt-8 bg-transparent rounded-[0.2rem] border-2 border-black hover:bg-black hover:text-white text-black">ABOUT US</Button>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 text-center pb-20">
-          <h1 className="text-6xl font-bold text-white mb-4 drop-shadow-lg">Reality Break</h1>
-          <Button className="bg-red-600 hover:bg-red-700 text-white">Listen Now</Button>
-        </div>
+        <motion.div
+          className="absolute bottom-8 transform -translate-x-1/2 z-10 cursor-pointer"
+          initial={{ y: 0 }}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+          onClick={scrollToMembers}
+        >
+          <ChevronDown className="w-12 h-12 text-black hover:text-black/70 transition-colors" />
+          <span className="sr-only">Scroll nach unten</span>
+        </motion.div>
       </section>
 
+
       {/* Band Members Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-100 to-white">
+      <section ref={membersRef} className="py-20 xl:px-72 bg-gradient-to-b from-gray-100 to-white">
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-bold text-center mb-16">Meet the Reality Breakers</h2>
           <div className="space-y-24">
             {bandMembers.map((member, index) => (
               <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-16`}>
-                <div className="w-full md:w-1/2">
+                <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-[1px_5px_10px_rgb(0,0,0,0.4)]">
                   <div className="relative">
                     <img
-                      src={`/placeholder.svg?height=600&width=600&text=${member.name}`}
+                      src={member.src}
                       alt={`${member.name} - ${member.role} of Reality Break`}
-                      className="w-full h-auto rounded-lg shadow-2xl"
+                      className="w-full h-auto aspect-square object-cover overflow-hidden"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-6">
                       <h3 className="text-3xl font-bold">{member.name}</h3>
@@ -158,11 +172,11 @@ export default function RealityBreakWebsite() {
                 </div>
                 <div className="w-full md:w-1/2 space-y-6">
                   <div className="flex items-center space-x-4">
-                    <MusicIcon className="w-8 h-8 text-red-600" />
+                    <MusicIcon key={index} className="w-8 h-8 text-rb_pink " />
                     <span className="text-xl">{member.instrument}</span>
                   </div>
                   <p className="text-lg leading-relaxed">{member.bio}</p>
-                  <blockquote className="text-2xl font-semibold italic text-gray-700 border-l-4 border-red-600 pl-4">
+                  <blockquote key={index} className="text-2xl font-semibold italic text-gray-700 border-l-4 border-rb_pink pl-4">
                     "{member.quote}"
                   </blockquote>
                   <div className="flex space-x-4">
@@ -185,7 +199,7 @@ export default function RealityBreakWebsite() {
       {/* Tour Dates Section */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Tour Dates</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">Upcoming Shows</h2>
           <div className="space-y-4 max-w-5xl mx-auto">
             {tourDates.map((event, index) => (
               <div
@@ -194,11 +208,11 @@ export default function RealityBreakWebsite() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
                   <span className="font-bold text-lg">{event.date}</span>
-                  <span className="text-purple-500 text-lg">{event.venue}</span>
+                  <a className="text-black/30 text-lg font-bold" href={event.venueURL}>{event.venue}</a>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-4 sm:mt-0">
                   <span className="font-bold text-right sm:mr-8">{event.location}</span>
-                  <Button className="bg-purple-500 hover:bg-purple-600 text-white min-w-[120px]">
+                  <Button className="bg-rb_blue hover:bg-purple-600 text-white min-w-[120px]">
                     TICKETS
                   </Button>
                 </div>
@@ -209,43 +223,49 @@ export default function RealityBreakWebsite() {
       </section>
 
       {/* Image Carousel Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-black/90">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">Gallery</h2>
           <div className="relative overflow-hidden">
-            <div className="flex transition-transform duration-500 ease-in-out"
-                 style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}>
-              {carouselImages.map((src, index) => (
+            <div className="flex items-center justify-center gap-4">
+              <button
+                onClick={prevImage}
+                className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
+                aria-label="Previous image"
+              >
+                <ChevronLeftIcon className="w-6 h-6 text-black" />
+              </button>
+              <div className="w-full overflow-hidden">
                 <div
-                  key={index}
-                  className={`w-full flex-shrink-0 px-4 transition-all duration-500 ease-in-out ${
-                    index === currentImageIndex
-                      ? 'scale-100 opacity-100'
-                      : 'scale-75 opacity-50'
-                  }`}
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
                 >
-                  <img
-                    src={src}
-                    alt={`Reality Break band image ${index + 1}`}
-                    className="w-full h-auto object-cover rounded-lg shadow-2xl"
-                  />
+                  {carouselImages.map((src, index) => (
+                    <div
+                      key={index}
+                      className={`w-full flex-shrink-0 px-4 transition-all duration-500 ease-in-out ${index === currentImageIndex
+                        ? 'scale-100 opacity-100'
+                        : 'scale-75 opacity-50'
+                        }`}
+                      style={{ aspectRatio: '16 / 9' }}
+                    >
+                      <img
+                        src={src}
+                        alt={`Reality Break band image ${index + 1}`}
+                        className="w-full h-full object-cover rounded-xl shadow-2xl"
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <button
+                onClick={nextImage}
+                className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
+                aria-label="Next image"
+              >
+                <ChevronRightIcon className="w-6 h-6 text-black" />
+              </button>
             </div>
-            <button
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
-              aria-label="Previous image"
-            >
-              <ChevronLeftIcon className="w-6 h-6 text-black" />
-            </button>
-            <button
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
-              aria-label="Next image"
-            >
-              <ChevronRightIcon className="w-6 h-6 text-black" />
-            </button>
           </div>
         </div>
       </section>
@@ -254,7 +274,7 @@ export default function RealityBreakWebsite() {
       <section className="py-20 bg-black text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-6xl font-bold mb-16">CONTACT</h2>
-          
+
           <div className="space-y-16 max-w-lg mx-auto">
             <div className="space-y-2">
               <h3 className="text-gray-400 text-lg tracking-wider">MANAGEMENT</h3>
