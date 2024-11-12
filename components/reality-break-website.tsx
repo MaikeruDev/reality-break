@@ -10,6 +10,7 @@ import { motion } from 'framer-motion'
 
 export default function RealityBreakWebsite() {
   const membersRef = useRef<HTMLElement>(null)
+  const showsRef = useRef<HTMLElement>(null)
   const bandMembers = [
     {
       name: "Lorem",
@@ -125,6 +126,10 @@ export default function RealityBreakWebsite() {
     membersRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const scrollToShows = () => {
+    showsRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -138,9 +143,10 @@ export default function RealityBreakWebsite() {
               className="mx-auto"
               width={1000}
               height={1000}
+              draggable={false}
             />
           </div>
-          <Button className="mt-8 bg-transparent rounded-[0.2rem] border-2 border-black hover:bg-black hover:text-white text-black">ABOUT US</Button>
+          <Button onClick={scrollToShows} className="mt-8 bg-transparent rounded-[0.2rem] border-2 border-black hover:bg-black hover:text-white text-black">UPCOMING SHOWS</Button>
         </div>
         <motion.div
           className="absolute bottom-8 transform -translate-x-1/2 z-10 cursor-pointer"
@@ -168,6 +174,7 @@ export default function RealityBreakWebsite() {
                       src={member.src}
                       alt={`${member.name} - ${member.role} of Reality Break`}
                       className="w-full h-auto aspect-square object-cover overflow-hidden"
+                      draggable={false}
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-6">
                       <h3 className="text-3xl font-bold">{member.name}</h3>
@@ -202,9 +209,9 @@ export default function RealityBreakWebsite() {
       </section>
 
       {/* Tour Dates Section */}
-      <section className="py-20 bg-gray-100">
+      <section ref={showsRef} className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Upcoming Shows</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-black/80">Upcoming Shows</h2>
           <div className="space-y-4 max-w-5xl mx-auto">
             {tourDates.map((event, index) => (
               <div
@@ -230,7 +237,7 @@ export default function RealityBreakWebsite() {
       {/* Image Carousel Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-black">Gallery</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-black/80">Gallery</h2>
           <div className="relative overflow-hidden">
             <div className="flex items-center justify-center gap-4">
               <button
@@ -238,7 +245,7 @@ export default function RealityBreakWebsite() {
                 className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
                 aria-label="Previous image"
               >
-                <ChevronLeftIcon className="w-6 h-6 text-black" />
+                <ChevronLeftIcon className="w-6 h-6 text-black/80" />
               </button>
               <div className="w-full overflow-hidden">
                 <div
@@ -258,6 +265,7 @@ export default function RealityBreakWebsite() {
                         src={src}
                         alt={`Reality Break band image ${index + 1}`}
                         className="w-full h-full object-cover rounded-xl"
+                        draggable={false}
                       />
                     </div>
                   ))}
@@ -268,7 +276,7 @@ export default function RealityBreakWebsite() {
                 className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
                 aria-label="Next image"
               >
-                <ChevronRightIcon className="w-6 h-6 text-black" />
+                <ChevronRightIcon className="w-6 h-6 text-black/80" />
               </button>
             </div>
           </div>
