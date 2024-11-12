@@ -83,13 +83,14 @@ const dummyGalleryImages: GalleryImage[] = [
     }
 ]
 
+
 export default function Dashboard() {
     const [bandMembers, setBandMembers] = useState<BandMember[]>(dummyMembers)
     const [shows, setShows] = useState<Show[]>(dummyShows)
     const [galleryImages, setGalleryImages] = useState<GalleryImage[]>(dummyGalleryImages)
 
-    const [editingMember, setEditingMember] = useState<BandMember | null>(null)
-    const [editingShow, setEditingShow] = useState<Show | null>(null)
+    const [editingMember, setEditingMember] = useState<any>(null)
+    const [editingShow, setEditingShow] = useState<any>(null)
 
     const addOrUpdateBandMember = () => {
         if (editingMember) {
@@ -100,7 +101,7 @@ export default function Dashboard() {
                 setEditingMember(null)
             }
         } else {
-            if (editingMember?.name && editingMember?.role) {
+            if (editingMember.name && editingMember?.role) {
                 setBandMembers([...bandMembers, { ...editingMember, id: Date.now().toString() } as BandMember])
                 setEditingMember(null)
             }
@@ -182,37 +183,37 @@ export default function Dashboard() {
                                 <Input
                                     placeholder="Name"
                                     value={editingMember?.name || ''}
-                                    onChange={e => setEditingMember(prev => prev ? { ...prev, name: e.target.value } : null)}
+                                    onChange={e => setEditingMember((prev: any) => prev ? { ...prev, name: e.target.value } : null)}
                                 />
                                 <Input
                                     placeholder="Role"
                                     value={editingMember?.role || ''}
-                                    onChange={e => setEditingMember(prev => prev ? { ...prev, role: e.target.value } : null)}
+                                    onChange={e => setEditingMember((prev: any) => prev ? { ...prev, role: e.target.value } : null)}
                                 />
                                 <Input
                                     placeholder="Instrument"
                                     value={editingMember?.instrument || ''}
-                                    onChange={e => setEditingMember(prev => prev ? { ...prev, instrument: e.target.value } : null)}
+                                    onChange={e => setEditingMember((prev: any) => prev ? { ...prev, instrument: e.target.value } : null)}
                                 />
                                 <Textarea
                                     placeholder="Bio"
                                     value={editingMember?.bio || ''}
-                                    onChange={e => setEditingMember(prev => prev ? { ...prev, bio: e.target.value } : null)}
+                                    onChange={e => setEditingMember((prev: any) => prev ? { ...prev, bio: e.target.value } : null)}
                                 />
                                 <Input
                                     placeholder="Quote"
                                     value={editingMember?.quote || ''}
-                                    onChange={e => setEditingMember(prev => prev ? { ...prev, quote: e.target.value } : null)}
+                                    onChange={e => setEditingMember((prev: any) => prev ? { ...prev, quote: e.target.value } : null)}
                                 />
                                 <Input
                                     placeholder="Instagram"
                                     value={editingMember?.socialMedia?.instagram || ''}
-                                    onChange={e => setEditingMember(prev => prev ? { ...prev, socialMedia: { ...prev.socialMedia, instagram: e.target.value } } : null)}
+                                    onChange={e => setEditingMember((prev: any) => prev ? { ...prev, socialMedia: { ...prev.socialMedia, instagram: e.target.value } } : null)}
                                 />
                                 <Input
                                     placeholder="Twitter"
                                     value={editingMember?.socialMedia?.twitter || ''}
-                                    onChange={e => setEditingMember(prev => prev ? { ...prev, socialMedia: { ...prev.socialMedia, twitter: e.target.value } } : null)}
+                                    onChange={e => setEditingMember((prev: any) => prev ? { ...prev, socialMedia: { ...prev.socialMedia, twitter: e.target.value } } : null)}
                                 />
                             </div>
                         </CardContent>
@@ -243,17 +244,17 @@ export default function Dashboard() {
                                 <Input
                                     type="date"
                                     value={editingShow?.date || ''}
-                                    onChange={e => setEditingShow(prev => prev ? { ...prev, date: e.target.value } : null)}
+                                    onChange={e => setEditingShow((prev: any) => prev ? { ...prev, date: e.target.value } : null)}
                                 />
                                 <Input
                                     placeholder="Venue"
                                     value={editingShow?.venue || ''}
-                                    onChange={e => setEditingShow(prev => prev ? { ...prev, venue: e.target.value } : null)}
+                                    onChange={e => setEditingShow((prev: any) => prev ? { ...prev, venue: e.target.value } : null)}
                                 />
                                 <Input
                                     placeholder="Location"
                                     value={editingShow?.location || ''}
-                                    onChange={e => setEditingShow(prev => prev ? { ...prev, location: e.target.value } : null)}
+                                    onChange={e => setEditingShow((prev: any) => prev ? { ...prev, location: e.target.value } : null)}
                                 />
                             </div>
                         </CardContent>
