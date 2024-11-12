@@ -5,56 +5,61 @@ import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { InstagramIcon, TwitterIcon, MusicIcon, Facebook, Youtube, ChevronLeftIcon, ChevronRightIcon, ChevronDown } from "lucide-react"
+import { InstagramIcon, TwitterIcon, MusicIcon, Facebook, Youtube, ChevronLeftIcon, ChevronRightIcon, ChevronDown, MicVocalIcon, GuitarIcon, DrumIcon, PianoIcon } from "lucide-react"
 import { motion } from 'framer-motion'
 
 export default function RealityBreakWebsite() {
   const membersRef = useRef<HTMLElement>(null)
   const bandMembers = [
     {
-      name: "Noa",
-      role: "Bass Slapper",
-      instrument: "Bass Guitar",
-      bio: "Stinkt a bissle, With a voice that can shatter reality, Alex leads the band with raw emotion and unparalleled stage presence. Their lyrics dive deep into the human psyche, exploring the blurred lines between dreams and waking life.",
-      quote: "Music is the key that unlocks the doors of perception.",
-      socialMedia: { instagram: "@alex_realitybreak", twitter: "@alexsings_rb" },
-      src: "/noa.jpg"
+      name: "Lorem",
+      role: "Lorem ipsum",
+      instrument: "Lorem ipsum",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
+      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
+      socialMedia: { instagram: "", twitter: "" },
+      src: "/placeholder.png",
+      icon: MicVocalIcon,
     },
     {
-      name: "Sam",
-      role: "Lead Guitar",
-      instrument: "Electric Guitar",
-      bio: "Sam's guitar riffs are like lightning strikes, electrifying the audience and bending the fabric of sound. Their innovative use of effects and unconventional techniques creates soundscapes that defy reality.",
-      quote: "I don't play the guitar, I channel the universe through six strings.",
-      socialMedia: { instagram: "@sam_shreds", twitter: "@samguitar_rb" },
-      src: "/placeholder.png"
+      name: "Lorem",
+      role: "Lorem ipsum",
+      instrument: "Lorem ipsum",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
+      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
+      socialMedia: { instagram: "", twitter: "" },
+      src: "/placeholder.png",
+      icon: GuitarIcon,
     },
     {
-      name: "Jordan",
-      role: "Bass",
-      instrument: "Bass Guitar",
-      bio: "The backbone of Reality Break, Jordan's bass lines are the gravitational force that holds the band's sound together. Their grooves are so deep, they've been known to alter the Earth's rotation.",
-      quote: "Feel the low end? That's the sound of reality shifting.",
-      socialMedia: { instagram: "@jordan_lowend", twitter: "@jordanbass_rb" },
-      src: "/placeholder.png"
+      name: "Lorem",
+      role: "Lorem ipsum",
+      instrument: "Lorem ipsum",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
+      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
+      socialMedia: { instagram: "", twitter: "" },
+      src: "/placeholder.png",
+      icon: GuitarIcon,
     },
     {
-      name: "Taylor",
-      role: "Drums",
-      instrument: "Drum Set",
-      bio: "Taylor's drumming is a force of nature, creating rhythms that transcend time and space. Their polyrhythmic prowess and explosive energy drive the band's most mind-bending performances.",
-      quote: "I don't keep time, I bend it to my will.",
-      socialMedia: { instagram: "@taylor_beats", twitter: "@taylordrums_rb" },
-      src: "/placeholder.png"
+      name: "Lorem",
+      role: "Lorem ipsum",
+      instrument: "Lorem ipsum",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
+      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
+      socialMedia: { instagram: "", twitter: "" },
+      src: "/placeholder.png",
+      icon: DrumIcon,
     },
     {
-      name: "Casey",
-      role: "Keyboard",
-      instrument: "Synthesizer",
-      bio: "Casey is the band's sonic architect, crafting lush soundscapes and ethereal melodies that transport listeners to alternate dimensions. Their mastery of synthesis and sound design pushes the boundaries of what's possible in music.",
-      quote: "Every key is a portal to another world.",
-      socialMedia: { instagram: "@casey_keys", twitter: "@caseysynth_rb" },
-      src: "/placeholder.png"
+      name: "Lorem",
+      role: "Lorem ipsum",
+      instrument: "Lorem ipsum",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
+      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
+      socialMedia: { instagram: "", twitter: "" },
+      src: "/placeholder.png",
+      icon: PianoIcon,
     },
   ]
 
@@ -151,13 +156,13 @@ export default function RealityBreakWebsite() {
 
 
       {/* Band Members Section */}
-      <section ref={membersRef} className="py-20 xl:px-72 bg-gradient-to-b from-gray-100 to-white">
+      <section ref={membersRef} className="py-20 lg:px-40 bg-gradient-to-b from-gray-100 to-white">
         <div className="container mx-auto px-4">
           <h2 className="text-5xl font-bold text-center mb-16">Meet the Reality Breakers</h2>
           <div className="space-y-24">
             {bandMembers.map((member, index) => (
               <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-16`}>
-                <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-[1px_5px_10px_rgb(0,0,0,0.4)]">
+                <div className="w-full md:w-1/2 lg:w-1/3 rounded-xl overflow-hidden shadow-[1px_5px_10px_rgb(0,0,0,0.4)]">
                   <div className="relative">
                     <img
                       src={member.src}
@@ -170,9 +175,9 @@ export default function RealityBreakWebsite() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full md:w-1/2 space-y-6">
+                <div className="w-full md:w-1/2 lg:w-2/3 space-y-6">
                   <div className="flex items-center space-x-4">
-                    <MusicIcon key={index} className="w-8 h-8 text-rb_pink-600 " />
+                    <member.icon key={index} className="w-8 h-8 text-rb_pink-600 " />
                     <span className="text-xl">{member.instrument}</span>
                   </div>
                   <p className="text-lg leading-relaxed">{member.bio}</p>
@@ -199,7 +204,7 @@ export default function RealityBreakWebsite() {
       {/* Tour Dates Section */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Upcoming Shows</h2> 
+          <h2 className="text-4xl font-bold text-center mb-16">Upcoming Shows</h2>
           <div className="space-y-4 max-w-5xl mx-auto">
             {tourDates.map((event, index) => (
               <div
@@ -278,21 +283,21 @@ export default function RealityBreakWebsite() {
           <div className="space-y-16 max-w-lg mx-auto">
             <div className="space-y-2">
               <h3 className="text-rb_blue-400 text-lg tracking-wider">MANAGEMENT</h3>
-              <p className="text-2xl font-semibold">Wayne Pighini</p>
-              <p className="italic">Fly South Music Group</p>
-              <a href="mailto:info@flysouthmusic.com" className="text-white hover:text-purple-400 transition-colors">
-                info@flysouthmusic.com
+              <p className="text-2xl font-semibold">Max Mustermann</p>
+              <p className="italic">Amogus Music Group</p>
+              <a href="mailto:test@test.com" className="text-white hover:text-purple-400 transition-colors">
+                test@test.com
               </a>
             </div>
 
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <h3 className="text-rb_pink-400 text-lg tracking-wider">BOOKING (WORLDWIDE)</h3>
-              <p className="text-2xl font-semibold">Nick Storch</p>
-              <p className="italic">AGI</p>
-              <a href="mailto:nick@artistgrp.com" className="text-white hover:text-purple-400 transition-colors">
-                nick@artistgrp.com
+              <p className="text-2xl font-semibold">Max Mustermann</p>
+              <p className="italic">MAG</p>
+              <a href="mailto:test@test.com" className="text-white hover:text-purple-400 transition-colors">
+                test@test.com
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
