@@ -19,9 +19,7 @@ Welcome to the official repository for the Reality Break band website! This proj
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
-- [Lucide React](https://lucide.dev/)
-
-## 🚀 Getting Started
+- [Lucide React](https://lucide.dev/) 
 
 ## 📜 License
 
