@@ -135,7 +135,16 @@ export default function RealityBreakWebsite() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
-        <div className="text-center">
+        {/* Noise filter overlay */}
+        <svg className="absolute inset-0 w-full h-full opacity-40 pointer-events-none filter-noise z-30" xmlns="http://www.w3.org/2000/svg">
+          <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noise)" />
+        </svg>
+
+        <div className="text-center relative z-10">
           <div className="bg-gradient-to-b from-transparent to-white px-6 sm:px-12">
             <Image
               src="/logo_black.png"
@@ -146,8 +155,11 @@ export default function RealityBreakWebsite() {
               draggable={false}
             />
           </div>
-          <Button onClick={scrollToShows} className="mt-8 bg-transparent rounded-[0.2rem] border-2 border-black hover:bg-black hover:text-white text-black">UPCOMING SHOWS</Button>
+          <Button onClick={scrollToShows} className="mt-8 bg-transparent rounded-[0.2rem] border-2 border-black hover:bg-black hover:text-white text-black">
+            UPCOMING SHOWS
+          </Button>
         </div>
+
         <motion.div
           className="absolute bottom-8 transform -translate-x-1/2 z-10 cursor-pointer"
           initial={{ y: 0 }}
@@ -156,9 +168,10 @@ export default function RealityBreakWebsite() {
           onClick={scrollToMembers}
         >
           <ChevronDown className="w-12 h-12 text-black hover:text-black/70 transition-colors" />
-          <span className="sr-only">Scroll nach unten</span>
+          <span className="sr-only">Scroll down</span>
         </motion.div>
       </section>
+
 
 
       {/* Band Members Section */}
