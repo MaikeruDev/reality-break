@@ -10,8 +10,32 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
-				rb_blue: '#00c0fe',
-				rb_pink: '#ff007d',
+				rb_blue: {
+					'50': '#effaff',
+					'100': '#def4ff',
+					'200': '#b6ecff',
+					'300': '#75dfff',
+					'400': '#2cd0ff',
+					'500': '#00c0fe',
+					'600': '#0096d4',
+					'700': '#0077ab',
+					'800': '#00648d',
+					'900': '#065374',
+					'950': '#04354d',
+				},
+				rb_pink: {
+					'50': '#fff0f9',
+					'100': '#ffe3f5',
+					'200': '#ffc6ec',
+					'300': '#ff98da',
+					'400': '#ff58bf',
+					'500': '#ff27a3',
+					'600': '#ff007d',
+					'700': '#df0061',
+					'800': '#b80050',
+					'900': '#980346',
+					'950': '#5f0025',
+				},
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {

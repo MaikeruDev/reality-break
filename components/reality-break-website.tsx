@@ -172,11 +172,11 @@ export default function RealityBreakWebsite() {
                 </div>
                 <div className="w-full md:w-1/2 space-y-6">
                   <div className="flex items-center space-x-4">
-                    <MusicIcon key={index} className="w-8 h-8 text-rb_pink " />
+                    <MusicIcon key={index} className="w-8 h-8 text-rb_pink-600 " />
                     <span className="text-xl">{member.instrument}</span>
                   </div>
                   <p className="text-lg leading-relaxed">{member.bio}</p>
-                  <blockquote key={index} className="text-2xl font-semibold italic text-gray-700 border-l-4 border-rb_pink pl-4">
+                  <blockquote key={index} className="text-2xl font-semibold italic text-gray-700 border-l-4 border-rb_pink-600 pl-4">
                     "{member.quote}"
                   </blockquote>
                   <div className="flex space-x-4">
@@ -199,7 +199,7 @@ export default function RealityBreakWebsite() {
       {/* Tour Dates Section */}
       <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Upcoming Shows</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">Upcoming Shows</h2> 
           <div className="space-y-4 max-w-5xl mx-auto">
             {tourDates.map((event, index) => (
               <div
@@ -208,11 +208,11 @@ export default function RealityBreakWebsite() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
                   <span className="font-bold text-lg">{event.date}</span>
-                  <a className="text-black/30 text-lg font-bold" href={event.venueURL}>{event.venue}</a>
+                  <a className="text-black/30 hover:text-rb_blue-600 transition duration-150 ease-in-out text-lg font-bold" href={event.venueURL}>{event.venue}</a>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-4 sm:mt-0">
                   <span className="font-bold text-right sm:mr-8">{event.location}</span>
-                  <Button className="bg-rb_blue hover:bg-purple-600 text-white min-w-[120px]">
+                  <Button className="bg-rb_blue-600 hover:bg-rb_blue-700 text-white min-w-[120px]">
                     TICKETS
                   </Button>
                 </div>
@@ -223,9 +223,9 @@ export default function RealityBreakWebsite() {
       </section>
 
       {/* Image Carousel Section */}
-      <section className="py-20 bg-black/90">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">Gallery</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-black">Gallery</h2>
           <div className="relative overflow-hidden">
             <div className="flex items-center justify-center gap-4">
               <button
@@ -252,7 +252,7 @@ export default function RealityBreakWebsite() {
                       <img
                         src={src}
                         alt={`Reality Break band image ${index + 1}`}
-                        className="w-full h-full object-cover rounded-xl shadow-2xl"
+                        className="w-full h-full object-cover rounded-xl"
                       />
                     </div>
                   ))}
@@ -277,7 +277,7 @@ export default function RealityBreakWebsite() {
 
           <div className="space-y-16 max-w-lg mx-auto">
             <div className="space-y-2">
-              <h3 className="text-gray-400 text-lg tracking-wider">MANAGEMENT</h3>
+              <h3 className="text-rb_blue-400 text-lg tracking-wider">MANAGEMENT</h3>
               <p className="text-2xl font-semibold">Wayne Pighini</p>
               <p className="italic">Fly South Music Group</p>
               <a href="mailto:info@flysouthmusic.com" className="text-white hover:text-purple-400 transition-colors">
@@ -286,7 +286,7 @@ export default function RealityBreakWebsite() {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-gray-400 text-lg tracking-wider">BOOKING (WORLDWIDE)</h3>
+              <h3 className="text-rb_pink-400 text-lg tracking-wider">BOOKING (WORLDWIDE)</h3>
               <p className="text-2xl font-semibold">Nick Storch</p>
               <p className="italic">AGI</p>
               <a href="mailto:nick@artistgrp.com" className="text-white hover:text-purple-400 transition-colors">
@@ -303,28 +303,28 @@ export default function RealityBreakWebsite() {
           <div className="flex justify-center space-x-6 mb-6">
             <a
               href="#"
-              className="bg-purple-500 p-3 rounded-full hover:bg-purple-600 transition-colors"
+              className="bg-rb_pink-600/75 p-3 rounded-full hover:bg-rb_pink-700 transition-colors"
               aria-label="Facebook"
             >
               <Facebook className="w-6 h-6" />
             </a>
             <a
               href="#"
-              className="bg-purple-500 p-3 rounded-full hover:bg-purple-600 transition-colors"
+              className="bg-rb_pink-600/75 p-3 rounded-full hover:bg-rb_pink-700 transition-colors"
               aria-label="Twitter"
             >
               <TwitterIcon className="w-6 h-6" />
             </a>
             <a
               href="#"
-              className="bg-purple-500 p-3 rounded-full hover:bg-purple-600 transition-colors"
+              className="bg-rb_pink-600/75 p-3 rounded-full hover:bg-rb_pink-700 transition-colors"
               aria-label="Instagram"
             >
               <InstagramIcon className="w-6 h-6" />
             </a>
             <a
               href="#"
-              className="bg-purple-500 p-3 rounded-full hover:bg-purple-600 transition-colors"
+              className="bg-rb_pink-600/75 p-3 rounded-full hover:bg-rb_pink-700 transition-colors"
               aria-label="YouTube"
             >
               <Youtube className="w-6 h-6" />
