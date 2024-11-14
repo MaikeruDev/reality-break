@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { InstagramIcon, TwitterIcon, MusicIcon, Facebook, Youtube, ChevronLeftIcon, ChevronRightIcon, ChevronDown, MicVocalIcon, GuitarIcon, DrumIcon, PianoIcon } from "lucide-react"
+import { InstagramIcon, TwitterIcon, MusicIcon, Facebook, Youtube, ChevronLeftIcon, ChevronRightIcon, ChevronDown, MicVocalIcon, GuitarIcon, DrumIcon, PianoIcon, Building2Icon, Calendar1Icon, PinIcon } from "lucide-react"
 import { motion } from 'framer-motion'
 
 export default function RealityBreakWebsite() {
@@ -175,13 +175,13 @@ export default function RealityBreakWebsite() {
 
 
       {/* Band Members Section */}
-      <section ref={membersRef} className="py-10 md:py-20 lg:px-40 bg-gradient-to-b from-gray-100 to-white">
+      <section ref={membersRef} className="py-10 sm:py-20 lg:px-40 bg-gradient-to-b from-gray-100 to-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">Meet the Reality Breakers</h2>
+          <h2 className="text-3xl sm:text-5xl font-bold text-center mb-16">Meet the Reality Breakers</h2>
           <div className="space-y-24">
             {bandMembers.map((member, index) => (
-              <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-16`}>
-                <div className="w-full md:w-1/2 lg:w-1/3 rounded-xl overflow-hidden shadow-[1px_5px_10px_rgb(0,0,0,0.4)]">
+              <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} items-center gap-8 sm:gap-16`}>
+                <div className="w-full sm:w-1/2 lg:w-1/3 rounded-xl overflow-hidden shadow-[1px_5px_10px_rgb(0,0,0,0.4)]">
                   <div className="relative">
                     <img
                       src={member.src}
@@ -195,7 +195,7 @@ export default function RealityBreakWebsite() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full md:w-1/2 lg:w-2/3 space-y-6">
+                <div className="w-full sm:w-1/2 lg:w-2/3 space-y-6">
                   <div className="flex items-center space-x-4">
                     <member.icon key={index} className="w-8 h-8 text-rb_pink-600 " />
                     <span className="text-xl">{member.instrument}</span>
@@ -222,26 +222,37 @@ export default function RealityBreakWebsite() {
       </section>
 
       {/* Tour Dates Section */}
-      <section ref={showsRef} className="py-10 md:py-20 bg-gray-100">
+      <section ref={showsRef} className="py-10 sm:py-20 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-black/80">Upcoming Shows</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 text-black/80">Upcoming Shows</h2>
           <div className="space-y-8 max-w-5xl mx-auto">
             {tourDates.map((event, index) => (
               <div
                 key={index}
-                className="flex flex-col sm:flex-row sm:items-center justify-between gap-y-4 sm:gap-8 py-6 border-b border-gray-200"
+                className="flex flex-col sm:flex-row sm:items-center justify-between sm:gap-8 py-6 border-b border-gray-200"
               >
                 <div className="flex flex-col items-center sm:flex-row sm:items-center gap-4 sm:gap-8 text-center sm:text-left">
-                  <span className="font-bold text-lg">{event.date}</span>
+                  {/* Date Section */}
+                  <div className="flex items-center gap-2">
+                    <Calendar1Icon className="w-6 h-6 sm:hidden" />
+                    <p className="font-bold text-lg">{event.date}</p>
+                  </div>
+                  {/* Venue Section */}
                   <a
-                    className="text-black/30 hover:text-rb_blue-600 transition duration-150 ease-in-out text-lg font-bold"
+                    className="flex items-center gap-2 text-black/30 hover:text-rb_blue-600 transition duration-150 ease-in-out text-lg font-bold"
                     href={event.venueURL}
                   >
+                    <Building2Icon className="w-6 h-6 sm:hidden" />
                     {event.venue}
                   </a>
                 </div>
                 <div className="flex flex-col items-center sm:flex-row sm:items-center gap-4 mt-4 sm:mt-0">
-                  <span className="font-bold text-center sm:text-right sm:mr-8">{event.location}</span>
+                  {/* Location Section */}
+                  <span className="flex items-center gap-2 font-bold text-center sm:text-right sm:mr-8">
+                    <PinIcon className="w-6 h-6 sm:hidden" />
+                    {event.location}
+                  </span>
+                  {/* Tickets Button */}
                   <Button
                     className="bg-rb_blue-600 hover:bg-rb_blue-700 text-white min-w-[120px] w-full sm:w-auto"
                   >
@@ -255,15 +266,16 @@ export default function RealityBreakWebsite() {
       </section>
 
 
+
       {/* Image Carousel Section */}
-      <section className="py-10 md:py-20 bg-white">
+      <section className="py-10 sm:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-black/80">Gallery</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-black/80">Gallery</h2>
           <div className="relative overflow-hidden">
-            <div className="flex items-center justify-center gap-1 md:gap-4">
+            <div className="flex items-center justify-center gap-1 sm:gap-4">
               <button
                 onClick={prevImage}
-                className="bg-white bg-opacity-50 p-1 md:p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
+                className="bg-white bg-opacity-50 p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
                 aria-label="Previous image"
               >
                 <ChevronLeftIcon className="w-6 h-6 text-black/80" />
@@ -294,7 +306,7 @@ export default function RealityBreakWebsite() {
               </div>
               <button
                 onClick={nextImage}
-                className="bg-white bg-opacity-50 p-1 md:p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
+                className="bg-white bg-opacity-50 p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
                 aria-label="Next image"
               >
                 <ChevronRightIcon className="w-6 h-6 text-black/80" />
@@ -305,9 +317,9 @@ export default function RealityBreakWebsite() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-10 md:py-20 bg-black text-white">
+      <section className="py-10 sm:py-20 bg-black text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-16">CONTACT</h2>
+          <h2 className="text-3xl sm:text-5xl font-bold mb-8 sm:mb-16">CONTACT</h2>
 
           <div className="space-y-16 max-w-lg mx-auto">
             <div className="space-y-2">
