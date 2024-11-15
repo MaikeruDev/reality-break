@@ -306,10 +306,10 @@ export default function RealityBreakWebsite() {
             <div className="flex items-center justify-center gap-1 sm:gap-4">
               <button
                 onClick={prevImage}
-                className="bg-white bg-opacity-50 p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
+                className="bg-black/80 bg-opacity-50 p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
                 aria-label="Previous image"
               >
-                <ChevronLeftIcon className="w-6 h-6 text-black/80" />
+                <ChevronLeftIcon className="w-6 h-6 text-white" />
               </button>
               <div className="w-full overflow-hidden z-30">
                 <div
@@ -328,7 +328,7 @@ export default function RealityBreakWebsite() {
                       <img
                         src={src}
                         alt={`Reality Break band image ${index + 1}`}
-                        className="w-full h-full object-cover rounded-xl"
+                        className="w-full h-full object-cover"
                         draggable={false}
                       />
                     </div>
@@ -337,10 +337,10 @@ export default function RealityBreakWebsite() {
               </div>
               <button
                 onClick={nextImage}
-                className="bg-white bg-opacity-50 p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
+                className="bg-black/80 bg-opacity-50 p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all duration-300"
                 aria-label="Next image"
               >
-                <ChevronRightIcon className="w-6 h-6 text-black/80" />
+                <ChevronRightIcon className="w-6 h-6 text-white" />
               </button>
             </div>
           </div>
@@ -357,7 +357,7 @@ export default function RealityBreakWebsite() {
             <div className="space-y-2">
               <p className="text-2xl font-semibold">Max Mustermann</p>
               <p className="italic">Amogus Music Group</p>
-              <a href="mailto:test@test.com" className="text-white hover:text-purple-400 transition-colors">
+              <a href="mailto:test@test.com" className="text-white hover:text-black/80 transition-colors">
                 test@test.com
               </a>
             </div>
