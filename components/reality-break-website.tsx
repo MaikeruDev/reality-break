@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { InstagramIcon, TwitterIcon, MusicIcon, Facebook, Youtube, ChevronLeftIcon, ChevronRightIcon, ChevronDown, MicVocalIcon, GuitarIcon, DrumIcon, PianoIcon, Building2Icon, Calendar1Icon, PinIcon } from "lucide-react"
+import { InstagramIcon, TwitterIcon, MusicIcon, Facebook, Youtube, ChevronLeftIcon, ChevronRightIcon, ChevronDown, MicVocalIcon, GuitarIcon, DrumIcon, PianoIcon, Building2Icon, Calendar1Icon, PinIcon, Guitar, Mic, KeyboardMusic, Drumstick, Drum, LucideGuitar } from "lucide-react"
 import { motion } from 'framer-motion'
 
 export default function RealityBreakWebsite() {
@@ -13,54 +13,64 @@ export default function RealityBreakWebsite() {
   const showsRef = useRef<HTMLElement>(null)
   const bandMembers = [
     {
-      name: "Lorem",
-      role: "Lorem ipsum",
-      instrument: "Lorem ipsum",
+      name: "Simon Paulitsch",
+      role: "Guitar",
+      instrument: "Guitar",
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/placeholder.png",
+      src: "/members/simon.jpg",
+      icon: Guitar,
+    },
+    {
+      name: "Fiona Splinter",
+      role: "Vocals & Guitar",
+      instrument: "Vocals & Guitar",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
+      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
+      socialMedia: { instagram: "", twitter: "" },
+      src: "/members/fiona.jpg",
       icon: MicVocalIcon,
     },
     {
-      name: "Lorem",
-      role: "Lorem ipsum",
-      instrument: "Lorem ipsum",
+      name: "Noa Waibel",
+      role: "Guitar",
+      instrument: "Guitar",
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/placeholder.png",
+      src: "/members/noa.jpg",
       icon: GuitarIcon,
     },
     {
-      name: "Lorem",
-      role: "Lorem ipsum",
-      instrument: "Lorem ipsum",
+      name: "Maya Merten",
+      role: "Keyboard",
+      instrument: "Keyboard",
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/placeholder.png",
-      icon: GuitarIcon,
+      src: "/members/maya.jpg",
+      icon: KeyboardMusic,
     },
     {
-      name: "Lorem",
-      role: "Lorem ipsum",
-      instrument: "Lorem ipsum",
+      name: "Luis Bösch",
+      role: "Drums",
+      instrument: "Drums",
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/placeholder.png",
-      icon: DrumIcon,
+      src: "/members/luis.jpg",
+      icon: Drum,
     },
     {
-      name: "Lorem",
-      role: "Lorem ipsum",
-      instrument: "Lorem ipsum",
+      name: "Naima Waibel",
+      role: "Bass",
+      instrument: "Bass",
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/placeholder.png",
-      icon: PianoIcon,
+      src: "/members/naima.jpg",
+      icon: Guitar,
     },
   ]
 
@@ -186,7 +196,7 @@ export default function RealityBreakWebsite() {
                     <img
                       src={member.src}
                       alt={`${member.name} - ${member.role} of Reality Break`}
-                      className="w-full h-auto aspect-square object-cover overflow-hidden"
+                      className="w-full h-auto aspect-square object-cover overflow-hidden grayscale"
                       draggable={false}
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-6">
