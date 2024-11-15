@@ -19,7 +19,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/simon2.jpg",
+      src: "/members/simon.webp",
       icon: Guitar,
     },
     {
@@ -29,7 +29,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/fiona2.jpg",
+      src: "/members/fiona.webp",
       icon: MicVocalIcon,
     },
     {
@@ -39,7 +39,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/noa2.jpg",
+      src: "/members/noa.webp",
       icon: GuitarIcon,
     },
     {
@@ -49,7 +49,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/maya2.jpg",
+      src: "/members/maya.webp",
       icon: KeyboardMusic,
     },
     {
@@ -59,7 +59,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/luis2.jpg",
+      src: "/members/luis.webp",
       icon: Drum,
     },
     {
@@ -69,7 +69,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/naima2.jpg",
+      src: "/members/naima.webp",
       icon: Guitar,
     },
   ]
@@ -106,19 +106,19 @@ export default function RealityBreakWebsite() {
   ]
 
   const carouselImages = [
-    "/carousel1.jpg",
-    "/carousel2.jpg",
-    "/carousel3.jpg",
-    "/carousel4.jpg",
-    "/carousel5.jpg",
-    "/carousel6.jpg",
-    "/carousel7.jpg",
-    "/carousel8.jpg",
-    "/carousel9.jpg",
-    "/carousel10.jpg",
-    "/carousel11.jpg",
-    "/carousel12.jpg",
-    "/carousel13.jpg",
+    "/carousel/1.webp",
+    "/carousel/2.webp",
+    "/carousel/3.webp",
+    "/carousel/4.webp",
+    "/carousel/5.webp",
+    "/carousel/6.webp",
+    "/carousel/7.webp",
+    "/carousel/8.webp",
+    "/carousel/9.webp",
+    "/carousel/10.webp",
+    "/carousel/11.webp",
+    "/carousel/12.webp",
+    "/carousel/13.webp",
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -278,7 +278,7 @@ export default function RealityBreakWebsite() {
                   </span>
                   {/* Tickets Button */}
                   <Button
-                    className="bg-rb_blue-600 hover:bg-rb_blue-700 text-white min-w-[120px] w-full sm:w-auto"
+                    className="bg-black/80 hover:bg-rb_blue-700 text-white min-w-[120px] w-full sm:w-auto"
                   >
                     TICKETS
                   </Button>
