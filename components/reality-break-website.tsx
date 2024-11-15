@@ -263,7 +263,7 @@ export default function RealityBreakWebsite() {
                   </div>
                   {/* Venue Section */}
                   <a
-                    className="flex items-center gap-2 text-black/30 hover:text-rb_blue-600 transition duration-150 ease-in-out text-lg font-bold"
+                    className="flex items-center gap-2 text-black/30 hover:text-black/80 transition-colors duration-150 ease-in-out text-lg font-bold"
                     href={event.venueURL}
                   >
                     <Building2Icon className="w-6 h-6 sm:hidden" />
