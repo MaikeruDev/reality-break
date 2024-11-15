@@ -13,16 +13,6 @@ export default function RealityBreakWebsite() {
   const showsRef = useRef<HTMLElement>(null)
   const bandMembers = [
     {
-      name: "Simon Paulitsch",
-      role: "Guitar",
-      instrument: "Guitar",
-      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
-      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
-      socialMedia: { instagram: "", twitter: "" },
-      src: "/members/simon.webp",
-      icon: Guitar,
-    },
-    {
       name: "Fiona Splinter",
       role: "Vocals & Guitar",
       instrument: "Vocals & Guitar",
@@ -31,6 +21,16 @@ export default function RealityBreakWebsite() {
       socialMedia: { instagram: "", twitter: "" },
       src: "/members/fiona.webp",
       icon: MicVocalIcon,
+    },
+    {
+      name: "Simon Paulitsch",
+      role: "Guitar",
+      instrument: "Guitar",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
+      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
+      socialMedia: { instagram: "", twitter: "" },
+      src: "/members/simon.webp",
+      icon: Guitar,
     },
     {
       name: "Noa Waibel",
@@ -53,16 +53,6 @@ export default function RealityBreakWebsite() {
       icon: KeyboardMusic,
     },
     {
-      name: "Luis Bösch",
-      role: "Drums",
-      instrument: "Drums",
-      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
-      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
-      socialMedia: { instagram: "", twitter: "" },
-      src: "/members/luis.webp",
-      icon: Drum,
-    },
-    {
       name: "Naima Waibel",
       role: "Bass",
       instrument: "Bass",
@@ -71,6 +61,16 @@ export default function RealityBreakWebsite() {
       socialMedia: { instagram: "", twitter: "" },
       src: "/members/naima.webp",
       icon: Guitar,
+    },
+    {
+      name: "Luis Bösch",
+      role: "Drums",
+      instrument: "Drums",
+      bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
+      quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
+      socialMedia: { instagram: "", twitter: "" },
+      src: "/members/luis.webp",
+      icon: Drum,
     },
   ]
 
@@ -172,7 +172,7 @@ export default function RealityBreakWebsite() {
               draggable={false}
             />
           </div>
-          <Button onClick={scrollToShows} className="mt-8 bg-transparent rounded-[0.2rem] border-2 border-black hover:bg-black hover:text-white text-black">
+          <Button onClick={scrollToShows} className="mt-8 rounded-[0.2rem] border-2 border-black/80 bg-black text-white hover:bg-white hover:text-black ">
             UPCOMING SHOWS
           </Button>
         </div>
@@ -184,7 +184,7 @@ export default function RealityBreakWebsite() {
           transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
           onClick={scrollToMembers}
         >
-          <ChevronDown className="w-12 h-12 text-black hover:text-black/70 transition-colors" />
+          <ChevronDown className="w-12 h-12 text- hover:text-black/70 transition-colors" />
           <span className="sr-only">Scroll down</span>
         </motion.div>
       </section>
@@ -213,7 +213,7 @@ export default function RealityBreakWebsite() {
                       className="w-full h-auto aspect-square object-cover overflow-hidden grayscale"
                       draggable={false}
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-6">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-6">
                       <h3 className="text-3xl font-bold">{member.name}</h3>
                       <p className="text-xl">{member.role}</p>
                     </div>
@@ -278,7 +278,7 @@ export default function RealityBreakWebsite() {
                   </span>
                   {/* Tickets Button */}
                   <Button
-                    className="bg-black/80 hover:bg-rb_blue-700 text-white min-w-[120px] w-full sm:w-auto"
+                    className="border-2 border-black/80 bg-black/80 text-white hover:bg-white hover:text-black/80 min-w-[120px] w-full sm:w-auto"
                   >
                     TICKETS
                   </Button>
@@ -355,7 +355,6 @@ export default function RealityBreakWebsite() {
 
           <div className="space-y-16 max-w-lg mx-auto">
             <div className="space-y-2">
-              <h3 className="text-rb_blue-400 text-lg tracking-wider">MANAGEMENT</h3>
               <p className="text-2xl font-semibold">Max Mustermann</p>
               <p className="italic">Amogus Music Group</p>
               <a href="mailto:test@test.com" className="text-white hover:text-purple-400 transition-colors">
@@ -363,46 +362,38 @@ export default function RealityBreakWebsite() {
               </a>
             </div>
 
-            {/* <div className="space-y-2">
-              <h3 className="text-rb_pink-400 text-lg tracking-wider">BOOKING (WORLDWIDE)</h3>
-              <p className="text-2xl font-semibold">Max Mustermann</p>
-              <p className="italic">MAG</p>
-              <a href="mailto:test@test.com" className="text-white hover:text-purple-400 transition-colors">
-                test@test.com
-              </a>
-            </div> */}
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-black text-white border-t border-gray-800">
+      <footer className="py-12 bg-black text-black border-t border-gray-800">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center space-x-6 mb-6">
             <a
               href="#"
-              className="bg-rb_pink-600/75 p-3 rounded-full hover:bg-rb_pink-700 transition-colors"
+              className="bg-white p-3 rounded-full transition-colors"
               aria-label="Facebook"
             >
               <Facebook className="w-6 h-6" />
             </a>
             <a
               href="#"
-              className="bg-rb_pink-600/75 p-3 rounded-full hover:bg-rb_pink-700 transition-colors"
+              className="bg-white p-3 rounded-full hover:bg-white transition-colors"
               aria-label="Twitter"
             >
               <TwitterIcon className="w-6 h-6" />
             </a>
             <a
               href="#"
-              className="bg-rb_pink-600/75 p-3 rounded-full hover:bg-rb_pink-700 transition-colors"
+              className="bg-white p-3 rounded-full hover:bg-white transition-colors"
               aria-label="Instagram"
             >
               <InstagramIcon className="w-6 h-6" />
             </a>
             <a
               href="#"
-              className="bg-rb_pink-600/75 p-3 rounded-full hover:bg-rb_pink-700 transition-colors"
+              className="bg-white p-3 rounded-full hover:bg-white transition-colors"
               aria-label="YouTube"
             >
               <Youtube className="w-6 h-6" />
