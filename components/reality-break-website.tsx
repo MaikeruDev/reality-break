@@ -19,7 +19,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/simon.jpg",
+      src: "/members/simon2.jpg",
       icon: Guitar,
     },
     {
@@ -29,7 +29,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/fiona.jpg",
+      src: "/members/fiona2.jpg",
       icon: MicVocalIcon,
     },
     {
@@ -39,7 +39,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/noa.jpg",
+      src: "/members/noa2.jpg",
       icon: GuitarIcon,
     },
     {
@@ -49,7 +49,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/maya.jpg",
+      src: "/members/maya2.jpg",
       icon: KeyboardMusic,
     },
     {
@@ -59,7 +59,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/luis.jpg",
+      src: "/members/luis2.jpg",
       icon: Drum,
     },
     {
@@ -69,7 +69,7 @@ export default function RealityBreakWebsite() {
       bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur .",
       quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit..",
       socialMedia: { instagram: "", twitter: "" },
-      src: "/members/naima.jpg",
+      src: "/members/naima2.jpg",
       icon: Guitar,
     },
   ]
@@ -112,6 +112,13 @@ export default function RealityBreakWebsite() {
     "/carousel4.jpg",
     "/carousel5.jpg",
     "/carousel6.jpg",
+    "/carousel7.jpg",
+    "/carousel8.jpg",
+    "/carousel9.jpg",
+    "/carousel10.jpg",
+    "/carousel11.jpg",
+    "/carousel12.jpg",
+    "/carousel13.jpg",
   ]
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -198,7 +205,7 @@ export default function RealityBreakWebsite() {
                       alt={`${member.name} - ${member.role} of Reality Break`}
                       className="w-full h-auto aspect-square object-cover overflow-hidden grayscale"
                       draggable={false}
-                    />
+                    /> 
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-6">
                       <h3 className="text-3xl font-bold">{member.name}</h3>
                       <p className="text-xl">{member.role}</p>
