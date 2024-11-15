@@ -192,20 +192,27 @@ export default function RealityBreakWebsite() {
 
 
       {/* Band Members Section */}
-      <section ref={membersRef} className="py-10 sm:py-20 lg:px-40 bg-gradient-to-b from-gray-100 to-white">
+      <section ref={membersRef} className="relative py-10 sm:py-20 lg:px-40 bg-gradient-to-b from-gray-100 to-white">
+        <svg className="absolute inset-0 w-full h-full opacity-40 pointer-events-none filter-noise2 z-20" xmlns="http://www.w3.org/2000/svg">
+          <filter id="noise2">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noise)" />
+        </svg>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-5xl font-bold text-center mb-16">Meet the Reality Breakers</h2>
           <div className="space-y-24">
             {bandMembers.map((member, index) => (
               <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} items-center gap-8 sm:gap-16`}>
-                <div className="w-full sm:w-1/2 lg:w-1/3 rounded-xl overflow-hidden shadow-[1px_5px_10px_rgb(0,0,0,0.4)]">
+                <div className="w-full sm:w-1/2 lg:w-1/3 overflow-hidden shadow-[1px_5px_10px_rgb(0,0,0,0.4)] z-30">
                   <div className="relative">
                     <img
                       src={member.src}
                       alt={`${member.name} - ${member.role} of Reality Break`}
                       className="w-full h-auto aspect-square object-cover overflow-hidden grayscale"
                       draggable={false}
-                    /> 
+                    />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-6">
                       <h3 className="text-3xl font-bold">{member.name}</h3>
                       <p className="text-xl">{member.role}</p>
@@ -214,11 +221,11 @@ export default function RealityBreakWebsite() {
                 </div>
                 <div className="w-full sm:w-1/2 lg:w-2/3 space-y-6">
                   <div className="flex items-center space-x-4">
-                    <member.icon key={index} className="w-8 h-8 text-rb_pink-600 " />
-                    <span className="text-xl">{member.instrument}</span>
+                    <member.icon key={index} className="w-8 h-8 text-black/80 " />
+                    <span className="text-xl">{member.name}</span>
                   </div>
                   <p className="text-lg leading-relaxed">{member.bio}</p>
-                  <blockquote key={index} className="text-2xl font-semibold italic text-gray-700 border-l-4 border-rb_pink-600 pl-4">
+                  <blockquote key={index} className="text-2xl font-semibold italic text-gray-700 border-l-4 border-black/80 pl-4">
                     "{member.quote}"
                   </blockquote>
                   <div className="flex space-x-4">
@@ -285,7 +292,14 @@ export default function RealityBreakWebsite() {
 
 
       {/* Image Carousel Section */}
-      <section className="py-10 sm:py-20 bg-white">
+      <section className="relative py-10 sm:py-20 bg-white">
+        <svg className="absolute inset-0 w-full h-full opacity-40 pointer-events-none filter-noise2 z-20" xmlns="http://www.w3.org/2000/svg">
+          <filter id="noise2">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noise)" />
+        </svg>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-black/80">Gallery</h2>
           <div className="relative overflow-hidden">
@@ -297,7 +311,7 @@ export default function RealityBreakWebsite() {
               >
                 <ChevronLeftIcon className="w-6 h-6 text-black/80" />
               </button>
-              <div className="w-full overflow-hidden">
+              <div className="w-full overflow-hidden z-30">
                 <div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
@@ -335,6 +349,7 @@ export default function RealityBreakWebsite() {
 
       {/* Contact Section */}
       <section className="py-10 sm:py-20 bg-black text-white">
+
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-5xl font-bold mb-8 sm:mb-16">CONTACT</h2>
 
